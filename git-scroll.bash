@@ -21,7 +21,7 @@ done < <(git log --reverse --oneline -- "$1")
 current=0
 while true; do
     # update working-tree
-    git checkout "${revisions[$current]}"
+    git checkout "${revisions[$current]}" || exit
 
     # print list and position
     clear
